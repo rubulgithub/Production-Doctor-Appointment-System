@@ -1,5 +1,4 @@
 import express from "express";
-// import colors from "colors";
 import morgan from "morgan";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
