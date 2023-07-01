@@ -32,7 +32,7 @@ app.use("/api/v1/doctor",doctorRoutes)
 app.use(express.static(path.join(__dirname,"./client/build")))
 
 
-app.get("*",(req,res)=>{
+app.get("*",function(req,res){
     res.sendFile(path.join(__dirname,"./client/build/index.html"))
 })
 
@@ -42,8 +42,6 @@ const port =process.env.PORT || 6060
 //listen
 try {
     app.listen(port,()=>{
-        console.log(`Server running in ${process.env.NODE_MODE} mode on port ${process.env.PORT}`.bgCyan.white)
     })
 } catch (error) {
-    console.log(error.stack)
 }
