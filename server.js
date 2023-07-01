@@ -9,13 +9,6 @@ import doctorRoutes from "./routes/doctorRoutes.js"
 import cors from "cors";
 import path from "path";
 
-// static files
-app.use(express.static(path.join(__dirname,"./client/build")))
-
-
-app.get("*",(req,res)=>{
-    res.sendFile(path.join(__dirname,"./client/build/index.html"))
-})
 //dotenv Configure
 dotenv.config();
 
@@ -34,6 +27,14 @@ app.use(cors());
 app.use("/api/v1/user", userRoutes)
 app.use("/api/v1/admin", adminRoutes)
 app.use("/api/v1/doctor",doctorRoutes)
+
+// static files
+app.use(express.static(path.join(__dirname,"./client/build")))
+
+
+app.get("*",(req,res)=>{
+    res.sendFile(path.join(__dirname,"./client/build/index.html"))
+})
 
 //port
 const port =process.env.PORT || 6060
