@@ -8,6 +8,8 @@ import doctorRoutes from "./routes/doctorRoutes.js"
 import cors from "cors";
 import path from "path";
 
+const __dirname = path.resolve();
+
 //dotenv Configure
 dotenv.config();
 
